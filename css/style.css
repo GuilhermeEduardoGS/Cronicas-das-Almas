@@ -88,6 +88,12 @@
     border: none;
 }
 
+/* Cadastro - Hover do botão */
+
+.main_cadastro .container .botao:hover{
+    color: gold;
+}
+
 /* Cadastro - Botão para redirecionar login */
 
 .main_cadastro .container .texto_jatemcadastro{
