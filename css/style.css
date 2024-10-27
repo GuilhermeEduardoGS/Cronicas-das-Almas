@@ -1,0 +1,53 @@
+/* Font */
+
+@font-face {
+    font-family: 'optimus regular';
+    src: url('fonts/optimusprinceps-webfont.woff2') format('woff2'),
+         url('fonts/optimusprinceps-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'optimus bold';
+    src: url('fonts/optimusprincepssemibold-webfont.woff2') format('woff2'),
+         url('fonts/optimusprincepssemibold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* Cadastro - Background do body */
+
+.main_cadastro{
+    background-image:url(../assets/Cadastro.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Cadastro - container */
+
+.main_cadastro .container{
+    display: flex;
+    margin-top: 50px;
+    width: 500px;
+    height: 712px;
+    border: 4px solid white;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+}
+
+/* Cadastro - Titulo */
+
+.main_cadastro .container .cadastro{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    color: white;
+    font-size: x-large;
+    font-family: 'optimus bold';
+    /* border: 2px solid red; */
+}
+
+/* Cadastro - Campos (Inputs) */
