@@ -127,5 +127,54 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+    
+/* Login - Titulo */
 
-/*  */
+.main_login .container .login{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    color: white;
+    margin-top: 50px;
+    font-size: x-large;
+    font-family: 'optimus bold';
+    /* border: 2px solid red; */
+}
+
+/* Login - Container */
+
+.main_login .container{
+    display: flex;
+    margin-top: 50px;
+    width: 500px;
+    height: 712px;
+    border: 2px solid rgba(176, 175, 150, 0.3);
+    flex-direction: column;
+    justify-self: start;
+    margin-left: 85px;
+    align-items: center;
+    background-color: rgba(176, 175, 150, 0.2);
+}
+
+/*Login - Inputs*/
+
+.main_login .container .login_inputs{
+    margin: 80px;
+    font-family: 'optimus regular';
+    color: white;
+    font-size: large;
+    /* border: 2px solid red; */
+    margin-top: 120px;
+}
+
+/*Login - Tamanho das inputs*/
+
+.main_login .container .input{
+    width: 350px;
+    height: 25px;
+    background-color: rgba(206, 210, 209, 0.7);
+    border:1px solid rgba(0, 0, 0, 0.75);
+    font-family: 'optimus bold';
+    color: black;
+    font-size: 20px;
+}
