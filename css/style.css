@@ -119,3 +119,13 @@
     .main_cadastro .container .cad_to_log:hover{
         color: orange;
     }
+
+/* Login - Background do login */
+
+    .main_login{
+        background-image: url(../assets/Tela\ de\ login.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+/*  */
