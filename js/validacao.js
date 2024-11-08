@@ -1,8 +1,8 @@
-    function valUser (){
-        var user = ipt_nome.value;
-        var mensagem = ""
+function valUser (){
+    var username = ipt_nome.value;
+        var mensagem = "";
 
-        if(user = ''){
+        if(username == ""){
             mensagem += `O campo Username não pode ser vazio.`
             ipt_nome.style.borderColor = "red"
         }
@@ -11,16 +11,15 @@
 
         return true
     }
-
+    
     function valEmail (){
         var email = ipt_email.value;
         var arroba = email.includes("@");
         var ponto = email.includes(".");
         var mensagem = "";
-        valEmail = false
         
         if(email == "" ){
-            mensagem += `O campo Email não pode ser vazio.`
+            mensagem += `O campo Email não pode ser vazio.<br>`
             ipt_email.style.borderColor = "red"
         }
 
@@ -28,53 +27,55 @@
             mensagem += `O email precisa conter arroba (@). Ex.: fulano@email.com <br>`
             ipt_email.style.borderColor = "red"
         }
-
+        
         if(!ponto){
             mensagem += `O email precisa conter ponto (.). Ex.: fulano@email.com <br>`
             ipt_email.style.borderColor = "red"
         }
-
+        
         msg_valEmail.innerHTML = mensagem;
 
         return true
-
+        
     }
-
+    
     function valConfEmail(){
+        var email = ipt_email.value
         var confemail = ipt_confemail.value;
-        valConfEmail = false
+        var mensagem = "";
 
         if(confemail == ""){
-            mensagem += `O campo Confirmar Email não pode ser vazio.`
-            ipt_email.style.borderColor = "red"
+            mensagem += `O campo Confirmar Email não pode ser vazio.<br>`
+            ipt_confemail.style.borderColor = "red"
         }
-
+        
         if(email != confemail){
             mensagem += `Os emails não coincidem.<br>`
-            ipt_email.style.borderColor = "red"
+            ipt_confemail.style.borderColor = "red"
         }
+
+        msg_valconfEmail.innerHTML = mensagem;    
         
         return true
     }
-
+    
     function valTelefone (){
-        var telefone = Number(ipt_telefone.value)
+        var telefone = ipt_telefone.value
         var tamanho = telefone.length;
         var mensagem = "";
-        valTelefone = false
-
-        if(!isNaN){
-            mensagem += `O campo deve ser preenchido apenas por números.`
+        
+        if(isNaN(telefone) || telefone == ""){
+            mensagem += `O campo deve ser preenchido apenas por números.<br>`
             ipt_telefone.style.borderColor = "red"
         }
 
         if(tamanho < 11){
-            mensagem += `O telefone deve ter no minímo 11 caracteres!`
+            mensagem += `O telefone deve ter no minímo 11 caracteres!<br>`
             ipt_telefone.style.borderColor = "red"
         }
-
+        
         msg_valTelefone.innerHTML = mensagem;
-
+        
         return true
     }
 
@@ -87,7 +88,6 @@
         var minus = /[a-z]/.test(senha);
         var maius = /[A-Z]/.test(senha);
         var mensagem = "";
-        valSenha = false
         
         if(senha == ""){
             mensagem += `A senha não pode ser vazia.<br>`
@@ -118,16 +118,17 @@
             mensagem += `A senha deve conter pelo menos uma letra maiúscula.<br>`
             ipt_senha.style.borderColor = "red"
         }
-
+        
         msg_valSenha.innerHTML = mensagem;
-
+        
         return true
     }
-
+    
     function valConfSenha (){
-        var confsenha = ipt_confsenha.value        
+        var senha = ipt_senha.value;
+        var confsenha = ipt_confsenha.value;        
         var mensagem = "";
-
+        
         if(confsenha == ""){
             mensagem += `O campo Confirmar Senha não pode ser vazio.<br>`
             ipt_confsenha.style.borderColor = "red"
@@ -138,14 +139,23 @@
             ipt_confsenha.style.borderColor = "red"
         }   
 
+        msg_valconfSenha.innerHTML = mensagem;
+        
     }
-
+    
     function cadastrar(){
-
+    
         var cadastro = true;
-
-        if(valEmail() || valSenha == "" || valTelefone == ""){
-            cadastro = false
+    
+        if(
+        valUser() == "" ||
+        valEmail() == "" || 
+        valConfSenha() == "" || 
+        valSenha() == "" ||
+        valConfEmail() == "" ||
+        valTelefone() == ""
+        ){
+        cadastro = false
         }
-  
-    }
+    
+    }   

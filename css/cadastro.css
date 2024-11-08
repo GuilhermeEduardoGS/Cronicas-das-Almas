@@ -124,9 +124,9 @@
 
 /* Cadastro - Mensagem de erro abaixo das inputs */
 
-    .main_cadastro .container .inputs .msg_erro{
+    .msg_erro{
         display: none;
         color: red;
-        font-size: 0.9em;
+        font-size: 15px;
         margin-top: 5px;
     }
