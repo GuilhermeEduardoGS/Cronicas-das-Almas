@@ -124,6 +124,7 @@
     }
 
 /* Cadastro - Mensagem de erro abaixo das inputs */
+<<<<<<< HEAD
 .main_cadastro .container .msg_erro {
     color: rgb(255, 0, 0); /* Cor do texto das mensagens de erro */
     font-family: 'optimus regular'; /* Usando a fonte já definida */
@@ -132,3 +133,12 @@
     display: block; /* Garantir que as mensagens de erro fiquem em uma nova linha */
     text-align: left; /* Alinhar a mensagem à esquerda */
 }
+=======
+
+    .msg_erro{
+        display: none;
+        color: red;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+>>>>>>> 3d3df113461c3d9f3488017b6b1ba824ee534ed4

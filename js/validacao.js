@@ -7,6 +7,7 @@
         msg_valUser.innerHTML = "";
 
         if(user == ""){
+
             mensagem += `O campo Username não pode ser vazio.`
             ipt_nome.style.borderColor = "red"
             valido = false
@@ -16,14 +17,14 @@
 
         return valido
     }
-
+    
     function valEmail (){
         var email = ipt_email.value;
         var arroba = email.includes("@");
         var ponto = email.includes(".");
         var mensagem = "";
         var valido = true
-        
+
         ipt_email.style.borderColor = ""
 
         if(email == "" ){
@@ -37,19 +38,19 @@
             ipt_email.style.borderColor = "red"
             valido = false;
         }
-
+        
         if(!ponto){
             mensagem += `O email precisa conter ponto (.). Ex.: fulano@email.com <br>`
             ipt_email.style.borderColor = "red"
             valido = false;
         }
-
+        
         msg_valEmail.innerHTML = mensagem;
 
         return valido
 
     }
-
+    
     function valConfEmail(){
         var email = ipt_email.value;
         var confemail = ipt_confemail.value;
@@ -63,16 +64,18 @@
             ipt_confemail.style.borderColor = "red"
             valido = false
         }
-
+        
         if(email != confemail){
             mensagem += `Os emails não coincidem.<br>`
             ipt_confemail.style.borderColor = "red"
             valido = false
         }
+
+        msg_valconfEmail.innerHTML = mensagem;    
         
         return valido
     }
-
+    
     function valTelefone (){
         var telefone = ipt_telefone.value
         var tamanho = telefone.length;
@@ -90,7 +93,7 @@
             ipt_telefone.style.borderColor = "red"
             valido = false
         }
-
+        
         msg_valTelefone.innerHTML = mensagem;
 
         return valido
@@ -147,7 +150,7 @@
 
         return valido
     }
-
+    
     function valConfSenha (){
         var senha = ipt_senha.value
         var confsenha = ipt_confsenha.value        
@@ -170,8 +173,12 @@
         msg_valSenha.innerHTML = mensagem;
 
         return valido
-    }
 
+        msg_valconfSenha.innerHTML = mensagem;
+        
+
+    }
+    
     function cadastrar(){
         var cadastro = true;
         
