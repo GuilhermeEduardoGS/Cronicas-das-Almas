@@ -146,7 +146,7 @@
             valido = false
         }
 
-        msg_valConfSenha.innerHTML = mensagem;
+        msg_valSenha.innerHTML = mensagem;
 
         return valido
     }
@@ -170,12 +170,9 @@
             valido = false
         }
         
-        msg_valSenha.innerHTML = mensagem;
+        msg_valconfSenha.innerHTML = mensagem;
 
         return valido
-
-        msg_valconfSenha.innerHTML = mensagem;
-        
 
     }
     
