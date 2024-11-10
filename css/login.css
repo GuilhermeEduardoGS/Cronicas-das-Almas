@@ -1,124 +1,124 @@
 /* Font */
 
 @font-face {
-    font-family: 'optimus regular';
-    src: url('fonts/optimusprinceps-webfont.woff2') format('woff2'),
-        url('fonts/optimusprinceps-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "optimus regular";
+  src: url("fonts/optimusprinceps-webfont.woff2") format("woff2"),
+    url("fonts/optimusprinceps-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'optimus bold';
-    src: url('fonts/optimusprincepssemibold-webfont.woff2') format('woff2'),
-        url('fonts/optimusprincepssemibold-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
+  font-family: "optimus bold";
+  src: url("fonts/optimusprincepssemibold-webfont.woff2") format("woff2"),
+    url("fonts/optimusprincepssemibold-webfont.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
 /* Login - Background do login */
 
-.main_login{
-    background-image: url(../assets/Tela\ de\ login.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
+.main_login {
+  background-image: url(../assets/Tela\ de\ login.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Login - Titulo */
 
-.main_login .container .login{
-display: flex;
-align-items: center;
-height: 100px;
-color: white;
-margin-top: 70px;
-font-size: 45px;
-font-family: 'optimus bold';
-/* border: 2px solid red; */
+.main_login .container .login {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  color: white;
+  margin-top: 70px;
+  font-size: 45px;
+  font-family: "optimus bold";
+  /* border: 2px solid red; */
 }
 
 /* Login - Container */
 
-.main_login .container{
-display: flex;
-margin-top: 50px;
-width: 500px;
-height: 712px;
-border: 2px solid rgba(176, 175, 150, 0.2);
-flex-direction: column;
-justify-self: start;
-margin-left: 85px;
-align-items: center;
-background-color: rgba(176, 175, 150, 0.15);
+.main_login .container {
+  display: flex;
+  margin-top: 50px;
+  width: 500px;
+  height: 712px;
+  border: 2px solid rgba(176, 175, 150, 0.2);
+  flex-direction: column;
+  justify-self: start;
+  margin-left: 85px;
+  align-items: center;
+  background-color: rgba(176, 175, 150, 0.15);
 }
 
 /*Login - Inputs*/
 
-.main_login .container .login_inputs{
-margin: 80px;
-font-family: 'optimus regular';
-color: white;
-font-size: large;
-/* border: 2px solid red; */
-margin-top: 100px;
+.main_login .container .login_inputs {
+  margin: 80px;
+  font-family: "optimus regular";
+  color: white;
+  font-size: large;
+  /* border: 2px solid red; */
+  margin-top: 100px;
 }
 
 /*Login - Tamanho das inputs*/
 
-.main_login .container .input{
-width: 350px;
-height: 30px;
-background-color: rgba(206, 210, 209, 0.7);
-border:1px solid rgba(0, 0, 0, 0.75);
-font-family: 'optimus bold';
-color: black;
-font-size: 20px;
+.main_login .container .input {
+  width: 350px;
+  height: 30px;
+  background-color: rgba(206, 210, 209, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  font-family: "optimus bold";
+  color: black;
+  font-size: 20px;
 }
 
 /*Login - Botão de login*/
 
-.main_login .container .botao{
-font-family: 'optimus regular';
-font-size: 30px;
-height: 40px;
-width: 110px;
-border-radius: 10px;
-margin: -50px;
-/* border: 2px solid green; */
-background-color: black;
-opacity: 80%;
-color: white;
-text-align: center;
-cursor: pointer;
-text-decoration: none;
-border: none;
+.main_login .container .botao {
+  font-family: "optimus regular";
+  font-size: 30px;
+  height: 40px;
+  width: 110px;
+  border-radius: 10px;
+  margin: -50px;
+  /* border: 2px solid green; */
+  background-color: black;
+  opacity: 80%;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
 }
 
 /*Login - Hover do botão*/
 
-.main_login .container .botao:hover{
-color: gold;
+.main_login .container .botao:hover {
+  color: gold;
 }
 
 /* Login - Botão para redirecionar pro cadastro */
 
-.main_login .container .texto_naotemcadastro{
-color: white;
-font-size: 22px;
-margin-top: 180px;
-/* border: 1px solid purple; */
-font-family: 'optimus bold';
+.main_login .container .texto_naotemcadastro {
+  color: white;
+  font-size: 22px;
+  margin-top: 180px;
+  /* border: 1px solid purple; */
+  font-family: "optimus bold";
 }
 
 /* Login - Mudando a cor nativa do link */
 
-.main_login .container .log_to_cad{
-color: gold;
-text-decoration: none;
+.main_login .container .log_to_cad {
+  color: gold;
+  text-decoration: none;
 }
 
 /* Login - Hover do botão para redirecionar pro cadastro */
 
-.main_login .container .log_to_cad:hover{
-color: orange;
+.main_login .container .log_to_cad:hover {
+  color: orange;
 }
