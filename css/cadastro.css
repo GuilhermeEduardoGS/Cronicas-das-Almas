@@ -30,13 +30,13 @@
     .main_cadastro .container{
         display: flex;
         margin-top: 50px;
-        width: 500px;
+        width: 550px;
         height: auto;
         border: 2px solid rgba(176, 175, 150, 0.2);
         flex-direction: column;
         justify-self: center;
         align-items: center;
-        background-color: rgba(176, 175, 150, 0.1);
+        background-color: rgba(56, 56, 44, 0.3);
     }
 
 /* Cadastro - Titulo */
@@ -59,8 +59,8 @@
         color: white;
         font-size: large;
         border: 2px solid red;
-        margin-top: -10px;
         position: relative;
+        background-position: absolut;
     }
 
 /* Cadastro - Tamanho das Inputs */
