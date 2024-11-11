@@ -73,6 +73,9 @@
         font-family: 'optimus bold';
         color: black;
         font-size: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         margin-bottom: 10px;
     }
 
@@ -127,8 +130,7 @@
 .main_cadastro .container .msg_erro {
     color: rgb(255, 0, 0);
     font-family: 'optimus regular';
-    margin-top: 5px; 
+    margin-top: 5px;
     display: block; 
-    text-align: left; 
-    position: relative;
+    text-align: center;
 }
