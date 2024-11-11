@@ -23,6 +23,8 @@
         background-image:url(../assets/Cadastro.jpg);
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed
     }
 
 /* Cadastro - container */
@@ -36,7 +38,7 @@
         flex-direction: column;
         justify-self: center;
         align-items: center;
-        background-color: rgba(56, 56, 44, 0.3);
+        background-color: rgba(33, 33, 31, 0.556);
     }
 
 /* Cadastro - Titulo */
@@ -58,9 +60,9 @@
         font-family: 'optimus regular';
         color: white;
         font-size: large;
-        border: 2px solid red;
+        /* border: 2px solid red; */
         position: relative;
-        background-position: absolut;
+        width: 356px;
     }
 
 /* Cadastro - Tamanho das Inputs */
@@ -127,10 +129,12 @@
     }
 
 /* Cadastro - Mensagem de erro abaixo das inputs */
-.main_cadastro .container .msg_erro {
+.main_cadastro .container .inputs .msg_erro {
     color: rgb(255, 0, 0);
     font-family: 'optimus regular';
-    margin-top: 5px;
+    font-size: 21px;
     display: block; 
     text-align: center;
+    /* border: 1px solid red; */
+    -webkit-text-stroke: 0.2px black;
 }

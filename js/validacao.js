@@ -3,11 +3,7 @@
         var mensagem = "";
         var valido = true;
 
-        ipt_nome.style.borderColor = ""
-        msg_valUser.innerHTML = "";
-
         if(user == ""){
-
             mensagem += `O campo Username não pode ser vazio.`
             ipt_nome.style.borderColor = "red"
             valido = false
@@ -25,9 +21,7 @@
         var mensagem = "";
         var valido = true
 
-        ipt_email.style.borderColor = ""
-
-        if(email == "" ){
+        if(email == ""){
             mensagem += `O campo Email não pode ser vazio.<br>`
             ipt_email.style.borderColor = "red"
             valido = false;
@@ -57,8 +51,6 @@
         var mensagem = ""
         var valido = true
 
-        ipt_confemail.style.borderColor = ""
-
         if(confemail == ""){
             mensagem += `O campo Confirmar Email não pode ser vazio.`
             ipt_confemail.style.borderColor = "red"
@@ -71,7 +63,7 @@
             valido = false
         }
 
-        msg_valconfEmail.innerHTML = mensagem;    
+        msg_valConfEmail.innerHTML = mensagem;    
         
         return valido
     }
@@ -102,8 +94,7 @@
     function valSenha (){
         var senha = ipt_senha.value;
         var tamanho = senha.length;
-        // caracteres Especiais validos = "!@#$%&"
-        var esp = /[!@#$%&]/.test(senha);
+        var esp = /[!@#$%&?]/.test(senha); // caracteres Especiais validos = "!@#$%&?"
         var num = /[0-9]/.test(senha);
         var minus = /[a-z]/.test(senha);
         var maius = /[A-Z]/.test(senha);
@@ -156,7 +147,6 @@
         var confsenha = ipt_confsenha.value        
         var mensagem = "";
         var valido = true
-
 
         if(confsenha == ""){
             mensagem += `O campo Confirmar Senha não pode ser vazio.<br>`
