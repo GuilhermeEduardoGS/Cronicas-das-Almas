@@ -7,6 +7,8 @@
             mensagem += `O campo Username não pode ser vazio.`
             ipt_nome.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_nome.style.borderColor = "green"
         }
 
         msg_valUser.innerHTML = mensagem;
@@ -25,18 +27,33 @@
             mensagem += `O campo Email não pode ser vazio.<br>`
             ipt_email.style.borderColor = "red"
             valido = false;
+        }else{
+            ipt_email.style.borderColor = "green"
         }
+
+        if(email.length > 100){
+            mensagem += `Email muito longo. <br>`
+            ipt_email.style.borderColor = "red"
+            valido = false;
+        }else{
+            ipt_email.style.borderColor = "green"
+        }
+
 
         if(!arroba){
             mensagem += `O email precisa conter arroba (@). Ex.: fulano@email.com <br>`
             ipt_email.style.borderColor = "red"
             valido = false;
+        }else{
+            ipt_email.style.borderColor = "green"
         }
         
         if(!ponto){
             mensagem += `O email precisa conter ponto (.). Ex.: fulano@email.com <br>`
             ipt_email.style.borderColor = "red"
             valido = false;
+        }else{
+            ipt_email.style.borderColor = "green"
         }
         
         msg_valEmail.innerHTML = mensagem;
@@ -55,12 +72,16 @@
             mensagem += `O campo Confirmar Email não pode ser vazio.`
             ipt_confemail.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_confemail.style.borderColor = "green"
         }
         
         if(email != confemail){
             mensagem += `Os emails não coincidem.<br>`
             ipt_confemail.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_confemail.style.borderColor = "green"
         }
 
         msg_valConfEmail.innerHTML = mensagem;    
@@ -78,12 +99,16 @@
             mensagem += `O campo deve ser preenchido apenas por números.<br>`
             ipt_telefone.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_telefone.style.borderColor = "green"
         }
 
         if(tamanho < 11){
             mensagem += `O telefone deve ter no minímo 11 caracteres!<br>`
             ipt_telefone.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_telefone.style.borderColor = "green"
         }
         
         msg_valTelefone.innerHTML = mensagem;
@@ -105,36 +130,48 @@
             mensagem += `A senha não pode ser vazia.<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
 
         if(tamanho < 8 || tamanho > 25){
             mensagem += `A senha deve conter entre 8 a 25 caracteres.<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
         
         if(!esp){
             mensagem += `A senha deve conter pelo menos um caractere especial. Ex.: "!", "@", "#", "$", "%", "&"<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
         
         if(!num){
             mensagem += `A senha de conter pelo menos um número.<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
         
         if(!minus){
             mensagem += `A senha deve conter pelo menos uma letra minúscula.<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
         
         if(!maius){
             mensagem += `A senha deve conter pelo menos uma letra maiúscula.<br>`
             ipt_senha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_senha.style.borderColor = "green"
         }
 
         msg_valSenha.innerHTML = mensagem;
@@ -152,12 +189,16 @@
             mensagem += `O campo Confirmar Senha não pode ser vazio.<br>`
             ipt_confsenha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_confsenha.style.borderColor = "green"
         }
 
         if(senha != confsenha){
             mensagem += `As senhas devem ser iguais.<br>`
             ipt_confsenha.style.borderColor = "red"
             valido = false
+        }else{
+            ipt_confsenha.style.borderColor = "green"
         }
         
         msg_valconfSenha.innerHTML = mensagem;
