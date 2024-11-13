@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css" />
+    <script src="./js/cadastrar.js"></script>
+  </head>
+  <body class="main_cadastro">
+    <div class="container">
+      <div class="cadastro">
+        <h1>Cadastro</h1>
+      </div>
+
+      <div class="inputs">
+
+        <!-- Nome do usuario -->
+        Nome <br />
+        <input type="text" id="ipt_nome" oninput="valUser()" class="input" />
+        <span class="msg_erro" id="msg_valUser"></span>
+        
+        <!-- Email -->
+        Email <br />
+        <input type="email" id="ipt_email" oninput="valEmail()" class="input" />
+        <span class="msg_erro" id="msg_valEmail"></span>
+        
+        <!-- Confirmar Email -->
+        Confirme o Email <br />
+        <input type="email" id="ipt_confemail" oninput="valConfEmail()" class="input" />
+        <span class="msg_erro" id="msg_valConfEmail"></span>
+        
+        <!-- Senha -->
+        Senha <br />
+        <input type="password" id="ipt_senha" oninput="valSenha()" class="input" />
+        <span class="msg_erro" id="msg_valSenha"></span>
+        
+        <!-- Confirmar Senha -->
+        Confirme a Senha <br />
+        <input type="password" id="ipt_confsenha" oninput="valConfSenha()" class="input" />
+        <span class="msg_erro" id="msg_valconfSenha"></span>
+      </div>
+
+        <button class="botao" onclick="cadastrar()">Cadastrar</button>
+
+        <p class="texto_jatemcadastro">
+          Já tem um cadastro?
+          <a href="../html/login.html" class="cad_to_log">Clique aqui para fazer Login!</a>
+        </p>
+  
+    </div>
+  </body>
+</html>

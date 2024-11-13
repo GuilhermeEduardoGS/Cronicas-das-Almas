@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <script src="./js/cadastrar.js"></script>
+  </head>
+  <body class="main_login">
+    <div class="container">
+      <div class="login">
+        <h1>Login</h1>
+      </div>
+
+      <div class="login_inputs">
+        <!-- Usuário -->
+        Usuário
+        <input type="text" class="input" id="ipt_nome" />
+
+        <!-- Senha -->
+        Senha
+        <input type="text" class="input" id="ipt_senha" />
+      </div>
+
+      <button class="botao" onclick="login()">Login</button>
+
+      <p class="texto_naotemcadastro">
+        Não tem um login?
+        <a href="../html/cadastro.html" class="log_to_cad"
+          >Cadastre-se Aqui!!!</a
+        >
+      </p>
+      <div id="div_msg"></div>
+    </div>
+  </body>
+</html>
