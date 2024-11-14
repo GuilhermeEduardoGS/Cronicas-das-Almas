@@ -102,6 +102,7 @@
 
 .main_login .container .botao:hover {
   color: gold;
+  transition: all 0.4s;
 }
 
 /* Login - Botão para redirecionar pro cadastro */
@@ -125,4 +126,5 @@
 
 .main_login .container .log_to_cad:hover {
   color: orange;
+  transition: all 0.4s;
 }
