@@ -18,13 +18,26 @@
 
 /* Index - Background do Index */
 
-/* body{
-    background-color: black;
-} */
+body{
+    background-image: url(../assets/firelink_home.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Index - Containers */
+
+body .containers{
+    display: flex;
+    justify-content: space-between  ;
+    margin-top: 180px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid green;
+}
 
 /* Index - Container Sobre Mim */
 
-body .containerSobreMim{
+body .containers .containerSobreMim{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -32,13 +45,37 @@ body .containerSobreMim{
     width: 500px;
     font-family: 'optimus regular';
     font-size: large;
+    color: white;
     text-align: center;
     border: 1px solid red;
 }
 
-/* Index - Título */
+/* Index - Título "Sobre Mim" */
 
-body .containerSobreMim .tituloSobreMim{
+body .containers .containerSobreMim .tituloSobreMim{
+    font-family: 'optimus bold';
+    color: gold;
+}
+
+/* Index - Container Histórias */
+
+body .containers .containerHistorias{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+    font-family: 'optimus regular';
+    font-size: large;
+    color: white;
+    text-align: center;
+    border: 1px solid red;
+}
+
+
+/* Index - Título "Sobre Mim" */
+
+body .containers .containerHistorias .tituloHistorias{
     font-family: 'optimus bold';
     color: gold;
 }
