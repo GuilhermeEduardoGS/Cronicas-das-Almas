@@ -42,13 +42,14 @@ body .containers .containerSobreMim{
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 500px;
+    width: 550px;
     font-family: 'optimus regular';
     font-size: large;
     color: white;
     text-align: center;
     border: 2px solid rgba(176, 175, 150, 0.2);
     background-color: rgba(33, 33, 31, 0.3);
+    margin-top: 150px;
 }
 
 
@@ -66,13 +67,14 @@ body .containers .containerHistorias{
     align-items: center;
     flex-direction: column;
     height: auto;
-    width: 500px;
+    width: 550px;
     font-family: 'optimus regular';
     font-size: large;
     color: white;
     text-align: center;
     border: 2px solid rgba(176, 175, 150, 0.2);
     background-color: rgba(33, 33, 31, 0.3);
+    margin-top: 150px;
 }
 
 /* Index - Título "Sobre Mim" */
