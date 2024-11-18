@@ -19,7 +19,7 @@
 /* Perfil - Background*/
 
 .main_perfil {
-    /* background-image: url(../assets/ds123img.jpg); */
+    background-image: url(../assets/ds123img.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -27,7 +27,7 @@
 /* Perfil - Header*/
 
 body .header {
-    /* color: white; */
+    color: white;
     /* border: 1px solid green; */
     display: flex;
     justify-content: center;
@@ -42,16 +42,74 @@ body .header {
 
 /* Perfil - Containers*/
 
-body .box_editar{
+body .containers{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+/* Perfil - Box Editar*/
+
+body .containers .box_editar{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     align-items: center;
     width: 300px;
     height: 300px;
-    justify-self: end;
     margin-right: 80px;
     font-family: 'optimus bold';
-    /* color: white; */
+    color: white;
+}
+
+/* Perfil - Box Buttons*/
+
+body .containers .box_editar .box_buttons{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    justify-content: space-around;
+    height: 200px;
+    align-items: center;
+    color: white;
+}
+
+/* Perfil - Box Salvos Hist*/
+
+body .containers .box_salvos_hist{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 1px solid purple; */
+    width: 300px;
+    height: 600px;
+    margin-left: 80px;
+    color: white;   
+}
+
+/* Perfil - Box Historico*/
+
+body .containers .box_salvos_hist .box_historico{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    justify-self: start;
+    font-family: 'optimus bold';
+}
+
+/* Perfil - Box Salvos*/
+
+body .containers .box_salvos_hist .box_salvos{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid green; */
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    justify-self: start;
+    font-family: 'optimus bold';
+    justify-content: flex-start;
 }
