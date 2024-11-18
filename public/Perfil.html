@@ -3,18 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Perfil</title>
+    <link rel="stylesheet" href="./css/perfil.css" />
   </head>
-  <body>
-    <h3>Perfil</h3>
-
-    <button onclick="editar_username">Editar Username</button>
-    <button onclick="editar_email">Editar Email</button>
-    <button onclick="editar_senha">Editar Senha</button>
-    <a href="./index.html">
-      <button onclick="voltar_home">Voltar para home</button>
-    </a>
-    <h1>Histórico</h1>
-    <h1>Salvos</h1>
+  <body class="main_perfil">
+    <div class="header">
+      <h1>Perfil</h1>
+    </div>
+    <div class="containers">
+      <div class="box_editar">
+        <h1>Editar Perfil</h1>
+        <div class="botao_editar_nome">
+          <button onclick="editar_username">Editar Username</button>
+        </div>
+        <div class="botao_editar_email">
+          <button onclick="editar_email">Editar Email</button>
+        </div>
+        <div class="botao_editar_senha">
+          <button onclick="editar_senha">Editar Senha</button>
+        </div>
+      </div>
+      <div class="botao_voltar_home">
+        <a href="./index.html">
+          <button onclick="voltar_home">Voltar para home</button>
+        </a>
+      </div>
+      <div class="titulo_historico">
+        <h1>Histórico</h1>
+      </div>
+      <div class="titulo_salvos">
+        <h1>Salvos</h1>
+      </div>
+    </div>
   </body>
 </html>
