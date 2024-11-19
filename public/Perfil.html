@@ -5,33 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil</title>
     <link rel="stylesheet" href="./css/perfil.css" />
+    <script src="./js/perfil.js"></script>
   </head>
   <body class="main_perfil">
     <div class="header">
       <h1>Perfil</h1>
     </div>
     <div class="containers">
+      <div class="box_editar_home">
       <div class="box_editar">
         <div class="titulo_editar">
         <h1>Editar Perfil</h1>
         </div>
         <div class="box_buttons">
         <div class="botao_editar_nome">
-          <button onclick="editar_username">Editar Username</button>
+          <span style="display: none;" id="ipt_TeditarNome"> Novo username </span>
+          <input style="display: none;" type="text" id="ipt_editarNome"><br>
+          <button style="display: block;" id="id_botaoEditarNome" onclick="editar_username('ipt_editarNome')">Editar Username</button>
+          <button style="display: none;" id="id_botaoEditar" onclick="editar()">Editar</button>
+          <button style="display: none;" id="id_botaoVoltar" onclick="voltar()">voltar</button>
+
         </div>
         <div class="botao_editar_email">
-          <button onclick="editar_email">Editar Email</button>
+          <!-- <button id="id_editarEmail" onclick="editar_email()">Editar Email</button> -->
         </div>
         <div class="botao_editar_senha">
-          <button onclick="editar_senha">Editar Senha</button>
+          <!-- <button id="id_editarSenha" onclick="editar_senha()">Editar Senha</button> -->
         </div>
       </div>
     </div>
-      <div class="botao_voltar_home">
-        <a href="./index.html">
-          <button onclick="voltar_home">Voltar para home</button>
-        </a>
+      <div class="voltar_home">
+          <a href="./index.html" class="perfil_to_home" >Voltar para Home</a>
       </div>
+    </div>
+
       <div class="box_salvos_hist">
         <div class="box_historico">
           <div class="titulo_historico">

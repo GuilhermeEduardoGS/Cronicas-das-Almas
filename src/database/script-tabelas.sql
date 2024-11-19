@@ -7,3 +7,4 @@ nome varchar(45),
 email varchar(100),
 senha varchar(25)
 );
+

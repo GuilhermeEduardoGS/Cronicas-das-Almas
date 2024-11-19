@@ -46,6 +46,7 @@ body .containers{
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    height: 120%;
 }
 
 /* Perfil - Box Editar*/
@@ -53,13 +54,14 @@ body .containers{
 body .containers .box_editar{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
+    border: 3px solid rgba(176, 175, 150, 0.2);
     align-items: center;
     width: 300px;
     height: 300px;
     margin-right: 80px;
     font-family: 'optimus bold';
     color: white;
+    background-color: rgba(14, 14, 14, 0.555);
 }
 
 /* Perfil - Box Buttons*/
@@ -92,12 +94,13 @@ body .containers .box_salvos_hist{
 body .containers .box_salvos_hist .box_historico{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
+    border: 3px solid rgba(176, 175, 150, 0.2);
     align-items: center;
     width: 300px;
     height: 250px;
     justify-self: start;
     font-family: 'optimus bold';
+    background-color: rgba(14, 14, 14, 0.555);
 }
 
 /* Perfil - Box Salvos*/
@@ -105,11 +108,35 @@ body .containers .box_salvos_hist .box_historico{
 body .containers .box_salvos_hist .box_salvos{
     display: flex;
     flex-direction: column;
-    /* border: 1px solid green; */
+    border: 3px solid rgba(176, 175, 150, 0.2);
     align-items: center;
     width: 300px;
     height: 250px;
     justify-self: start;
     font-family: 'optimus bold';
     justify-content: flex-start;
+    background-color: rgba(14, 14, 14, 0.555);
 }
+
+body .containers .voltar_home{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    margin-right: 75px;
+    font-size: 22px;
+    font-family: 'optimus bold';
+}
+
+body .containers .voltar_home .perfil_to_home{
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+body .containers .voltar_home .perfil_to_home:hover{
+    color: gold;
+}
+
