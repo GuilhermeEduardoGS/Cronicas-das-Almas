@@ -1,6 +1,6 @@
 var valido = true;
 function valUser (){
-    var nome = ipt_nome.value;
+    var nome = ipt_nome.value.trim();
     var mensagem = "";
 
     if(nome == ""){
@@ -17,7 +17,7 @@ function valUser (){
 }
 
 function valEmail (){
-    var email = ipt_email.value;
+    var email = ipt_email.value.trim();
     var arroba = email.includes("@");
     var ponto = email.includes(".");
     var mensagem = "";
@@ -54,7 +54,7 @@ function valEmail (){
 
 function valConfEmail(){
     var email = ipt_email.value;
-    var confemail = ipt_confemail.value;
+    var confemail = ipt_confemail.value.trim();
     var mensagem = ""
 
     if(confemail == ""){
@@ -79,9 +79,9 @@ function valConfEmail(){
 }
 
 function valSenha (){
-    var senha = ipt_senha.value;
+    var senha = ipt_senha.value.trim();
     var tamanho = senha.length;
-    var esp = /[!@#$%&?]/.test(senha); // caracteres Especiais validos = "!@#$%&?"
+    var esp = /[!@#$%&?_]/.test(senha); // caracteres Especiais validos = "!@#$%&?_"
     var num = /[0-9]/.test(senha);
     var minus = /[a-z]/.test(senha);
     var maius = /[A-Z]/.test(senha);
@@ -104,7 +104,7 @@ function valSenha (){
     }
     
     if(!esp){
-        mensagem += `A senha deve conter pelo menos um caractere especial. Ex.: "!", "@", "#", "$", "%", "&"<br>`
+        mensagem += `A senha deve conter pelo menos um caractere especial. Ex.: "!", "@", "#", "$", "%", "&", "_"<br>`
         ipt_senha.style.borderColor = "red"
         valido = false
     }else{
@@ -142,7 +142,7 @@ function valSenha (){
 
 function valConfSenha (){
     var senha = ipt_senha.value
-    var confsenha = ipt_confsenha.value        
+    var confsenha = ipt_confsenha.value.trim()      
     var mensagem = "";
 
     if(confsenha == ""){
@@ -198,7 +198,7 @@ function cadastrar() {
 
           setTimeout(() => {
             window.location = "./login.html";
-          }, "2000");
+          }, "1000");
 
         } 
       })
@@ -234,9 +234,10 @@ function login(){
                 sessionStorage.ID_USUARIO = json.idUsuario;
                 setTimeout (() => {
                     window.location.href = "./index.html";
-                }, 2000)
+                }, 1000)
             });
         } else {
+            alert("Houve um erro ao tentar realizar o login!")
             console.log ("Houve um erro ao tentar realizar o login!")
             div_msg.innerHTML = mensagem;
         }

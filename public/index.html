@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="./css/index.css" />
+    <script src="./js/login.js"></script>
   </head>
   <body class="main_home">
     <div class="header">
       <h1 class="Titulo">Home</h1>
-      <div class="botaoAcessarPerfil">
+      <div class="botoes" >
+      <div id="botao_acessar_perfil" style="display: none;" class="botaoAcessarPerfil">
         <a href="./Perfil.html">
           <button onclick="acessarPerfil()">Perfil</button>
         </a>
       </div>
+      <div>
+        <a href="./quiz.html">
+        <button onclick="acessarQuiz">Quiz</button>
+      </a>
+    </div>
+    <div>
+      <a href="./login.html">
+        <button onclick="acessarLogin()">Login</button>
+      </a>
+    </div>
+  </div>
     </div>
     <div class="containers">
       <div class="containerSobreMim">

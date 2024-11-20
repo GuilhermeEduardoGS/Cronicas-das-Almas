@@ -95,9 +95,9 @@ body .containers .containerHistorias .tituloHistorias{
         width: 100%;
         height: 70px;
         display: flex;
-        justify-content: center;  
         align-items: center;
         padding: 0 20px;
+        justify-content: space-between;
 
     }
 
@@ -106,18 +106,18 @@ body .containers .containerHistorias .tituloHistorias{
     body .header .Titulo {
         color: gold;
         font-family: optimus bold;
-        flex-grow: 1;
+        /* flex-grow: 1; */
         text-align: center;
     }
 
 /* Index - Botão da NavBar */
 
-     body .header .botaoAcessarPerfil {
+     body .header .botoes {
         display: flex;
         margin-right: 50px;
-        justify-content: end;
-        border: 1px solid red;
+        /* border: 1px solid red;   */
         align-self: center;
+        gap: 30px;
     }   
 
     .naotemcadastro{

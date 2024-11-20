@@ -27,7 +27,7 @@
 /* Perfil - Header*/
 
 body .header {
-    color: white;
+    color: gold;
     /* border: 1px solid green; */
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@ body .containers .box_editar{
     height: 300px;
     margin-right: 150px;
     font-family: 'optimus bold';
-    color: white;
+    color: gold;
     background-color: rgba(14, 14, 14, 0.555);
 }
 
@@ -73,7 +73,7 @@ body .containers .box_editar .box_buttons{
     justify-content: space-around;
     height: 200px;
     align-items: center;
-    color: white;
+    color: gold;
 }
 
 /* Perfil - Box Salvos Hist*/
@@ -86,7 +86,7 @@ body .containers .box_salvos_hist{
     width: 300px;
     height: 600px;
     margin-left: 150px;
-    color: white;   
+    color: gold;   
 }
 
 /* Perfil - Box Historico*/
