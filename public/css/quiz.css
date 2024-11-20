@@ -1,6 +1,3 @@
-/* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
-/* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
-
 :root {
     --primary-brand-color: #ED145B;
     --secondary-brand-color: #0762C8;
@@ -71,4 +68,9 @@ button {
 
 .text-new-gray {
     color: var(--new-gray);
+}
+
+.pontuacaoEJogo{
+    display: flex;
+    justify-content: center;
 }

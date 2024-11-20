@@ -11,17 +11,20 @@
     <div class="header">
       <h1 class="Titulo">Home</h1>
       <div class="botoes" >
+        <div id="botao_acessar_quiz" style="display: none;" class="botao_acessar_quiz">
+          <a href="./quiz.html">
+          <button onclick="acessarQuiz">Quiz</button>
+        </a>
+      </div>
       <div id="botao_acessar_perfil" style="display: none;" class="botaoAcessarPerfil">
         <a href="./Perfil.html">
           <button onclick="acessarPerfil()">Perfil</button>
         </a>
       </div>
-      <div>
-        <a href="./quiz.html">
-        <button onclick="acessarQuiz">Quiz</button>
-      </a>
+      <div id="botao_acessar_sair" style="display: none;" class="botao_acessar_sair">
+        <button onclick="deslogar()">Sair</button>
     </div>
-    <div>
+    <div id="botao_acessar_login" style="display: block;" class="botao_acessar_login">
       <a href="./login.html">
         <button onclick="acessarLogin()">Login</button>
       </a>
@@ -44,19 +47,179 @@
       <div class="containerHistorias">
         <h1 class="tituloHistorias">Histórias</h1>
         <div class="txtHistorias">
-          Lore Dark Souls <br /><br />
-          Lore Dark Souls II <br /><br />
-          Lore Dark Souls III <br /><br />
+         <a onclick="showLoreDS()" style="cursor: pointer;"> Lore Dark Souls </a>
+         <p> Lore Dark Souls II </p>
+          <p> Lore Dark Souls III </p>
         </div>
       </div>
     </div>
-    <div class="naotemcadastro">
-    <p class="texto_naotemcadastro">
-      Não tem um login?
-      <a href="./cadastro.html" class="log_to_cad"
-        >Cadastre-se Aqui!!!</a
-      >
-    </p>
-  </div>
+    <div class="DS_full">
+      <div class="DS_cap1">
+        <div class="titulo_cap1">Capitulo 1 <br> A PARTIR DO NADA</div>
+        No começo, não havia nada. O mundo era cinza e sem
+        vida, e apenas uma névoa densa corria pela imensidão vazia. Os dragões
+        imortais habitavam esse mundo cinza, e como não podiam morrer, não
+        podiam ser considerados formas de vida. Eles eram tão constantes quanto
+        todo o resto do mundo. Um dia, a Primeira Chama apareceu nas profundezas
+        e trouxe a luz e a vida. Talvez ainda mais importante, ela trouxe a
+        disparidade. Junto com luz e vida, também chegaram as trevas e a morte.
+        O mundo não era mais vazio e constante. Quando a Primeira Chama se
+        formou, as criaturas próximas a ela se levantaram para investigar. Esses
+        seres eram os gigantes. A chama tinha muito poder concentrado, e os
+        gigantes foram procurar por isso. Desse fogo, três gigantes saíram com
+        almas poderosas. Os gigantes se viram poderosos e decidiram que deviam
+        dominar o mundo, e começaram a guerra contra os dragões imortais da
+        superfície. Gwyn usou exércitos para enfrentar os dragões, Nito espalhou
+        doenças pelo mundo, e a bruxa fez chover fogo nos campos de batalha.
+        Aquela luta jamais teria um fim, se não fosse o papel decisivo de um
+        traidor: Seath, o dragão sem escamas, o único de sua raça que não era
+        imortal. Tomado pela inveja de seus iguais, Seath aceitou a oferta de
+        Gwyn para se juntar ao seu lado e revelou que o segredo da imortalidade
+        dos dragões eram suas escamas, e entregou que apenas o novo poder da
+        eletricidade podia destruí-las. Gwyn prometeu uma parte de sua alma, uma
+        posição de destaque em seu reino e um lugar para que Seath pudesse
+        pesquisar e construir sua própria imortalidade de outra maneira. E assim
+        os gigantes venceram, e a Era do Fogo teve seu início.
+      </div>
+      <br />
+
+      <div class="DS_cap2">
+        <div class="titulo_cap2">Capitulo 2 <br> AS IRMÃS DO CAOS </div>
+        A bruxa Izalith, deusa da vida e do fogo, tentou
+        recriar a Primeira Chama para garantir a sobrevivência da Era do Fogo.
+        Só que se tratava de um poder imenso e incontrolável, que a transformou
+        na entidade Berço do Caos, que deu origem a todos os monstros do mundo.
+        E esse não foi o único efeito colateral trágico. Izalith e os seus
+        seguidores foram consumidos pelo caos e fogo. As filhas da bruxa
+        escaparam, mas não ilesas. Queelag foi transformada da cintura para
+        baixo em aranha. O mesmo aconteceu com a outra irmã, conhecida como Fair
+        Lady, que ficou cega, fraca e ainda estava viva apenas porque vive perto
+        de uma bonfire em Blighttown — ela é a responsável pelo Covenant of
+        Chaos. O filho de Izalith foi transformado em um monstro abissal e
+        disforme chamado Ceaseless Discharge, que vive em Demon Ruins. A única
+        filha a escapar ilesa da chama do caos foi Quelana, que vive em
+        Blighttown e, além de ensinar a arte da piromancia, pede a aventureiros
+        que destruam sua mãe para poupá-la de uma eternidade de sofrimento.
+      </div>
+      <br />
+
+      <div class="DS_cap3">
+        <div class="titulo_cap3">Capitulo 3 <br> CHAMAS NÃO SÃO ETERNAS</div>
+
+        Com a disparidade, havia algo faltando, algo
+        que ninguém percebeu quando as três grandes almas foram tiradas da
+        chama. Se vida e morte foram dadas, a luz deveria ter o seu contraponto:
+        as trevas. E de fato, havia uma quarta alma, a Dark Soul (alma sombria).
+        Ela foi conseguida por alguém conhecido por Furtive Pygmy, que a guardou
+        para si e preferiu esconder-se e deixar o fogo se apagar. As grandes
+        almas deram forma a seus donos, que eram como divindades. E o Furtive
+        Pygmy se tornou o primeiro humano. Gwyn criou o reino de Lordran, e
+        durante a era do fogo muitos outros pequenos reinos se formaram ao seu
+        redor. Os humanos seguiam os gigantes, os líderes divinos da
+        civilização. Gwyn se casou e teve três filhos: o seu primogênito, sem
+        nome conhecido; Gwynevere, a princesa querida pelo reino; e Gwyndolin, o
+        filho escondido e tratado como se fosse uma garota — por ter afinidade
+        com a lua, uma característica feminina. Enquanto o reino de Gwyn
+        crescia, o Furtive Pygmy espalhava pequenos pedaços de sua Dark Soul.
+        Sua alma negra dava vida aos humanos. Em outras palavras, partes da Dark
+        Soul eram chamadas de... humanidade. A peculiaridade de Dark Souls é
+        que, por intermédio dos humanos, suas partes podem se multiplicar e
+        aumentar sua influência. Conforme o fogo se apaga, a escuridão aumenta —
+        ou talvez seja o contrário. De qualquer forma, a Era do Fogo começou a
+        ruir com o tempo, enquanto a escuridão se fazia mais e mais presente.
+        Com a chama esmaecendo, medidas desesperadas foram tomadas. A Bruxa de
+        Izalith, mãe de toda piromancia (arte do fogo), tentou recriar a
+        Primeira Chama para conter o avanço da escuridão. Ela conseguiu por um
+        breve tempo, mas logo perdeu o controle. A chama incompleta, viva e sem
+        rédeas se tornou o Berço do Caos, e assim deu origem a todos os monstros
+        de Lordran, modificando criaturas já existentes e criando tantas outras
+        aberrações. Gwyn viu o poder das trevas e do que ele é capaz. Com o
+        reino em ruínas e o seu poder acabando, ele só via uma alternativa: se
+        sacrificar para manter a chama ardendo por mais um tempo. Adiaria o
+        inevitável, pois nenhuma chama dura para sempre.
+      </div>
+      <br />
+
+      <div class="DS_cap4">
+        <div class="titulo_cap4">Capitulo 4 <br> SEM DIREITO DE MORRER </div>
+
+        Depois de Gwyn reacender a chama e tornar-se
+        parte dela (que consumia seu corpo), apareceu a maldição dos
+        mortos-vivos (Undead). Ninguém sabe porque isso aconteceu ou os motivos
+        que faziam alguém ser escolhido, mas aqueles que ganham o símbolo de
+        Undead perdem a capacidade de morrer definitivamente. As pessoas morrem
+        e voltam, perdendo sua humanidade e sanidade aos poucos, até ficarem sem
+        consciência a ponto de virarem os chamados Hollow, seres que
+        instintivamente atacam outros para saciar sua sede de almas. Os Hollows
+        podem voltar a ser humanos ao usarem um pouco de humanidade, e mantêm a
+        consciência sã absorvendo almas. Com o tempo, surgiu a profecia que
+        dizia que um Undead escolhido surgiria, iria para a terra dos gigantes
+        encerrar o trabalho de Gwyn (apagar o fogo) e descobriria o segredo dos
+        Undead. Esse escolhido está em um dos hospícios construídos longe de
+        Lordran, onde apenas Hollows são jogados. Um homem chamado Oscar de
+        Astora, que vem de uma família cuja profecia do Undead escolhido sempre
+        era citada, acha que essa (você) pode ser a pessoa certa, e dá a chave
+        para sair da cela. Pouco depois, Oscar é ferido pelo guardião da prisão,
+        o Asylum Demon. Antes de morrer, ele dá sua garrafa de Estus (Estus
+        Flask), que tem a capacidade de recuperar a vitalidade de quem a bebe e
+        pode ser enchida em qualquer Bonfire, as fogueiras espalhadas por
+        Lordran. Ao fugir, o escolhido é surpreendido por um grande corvo e é
+        carregado para a terra dos deuses e gigantes, Lordran. Após tocar os
+        dois Sinos do Despertar, o escolhido chega em Anor Londo, a cidade dos
+        deuses. Mas nenhum deles está lá, exceto Gwynevere, que entrega o
+        Lordvessel e diz para conseguir as grandes almas (de Nito, Berço do
+        Caos, Seath e dos Quatro Reis, que ganharam pedaços da alma de Gwyn), e
+        oferecê-las ao fogo da pira para abrir caminho para onde Gwyn está.
+      </div>
+      <br />
+
+      <div class="DS_cap5">
+        <div class="titulo_cap5">Capitulo 5 <br> AS SERPENTES </div>
+
+        Após pegar o item Lordvessel, o escolhido encontra duas
+        grandes serpentes. Uma delas é a Kingseeker Frampt, em Firelink Shrine,
+        seu local seguro de repouso. Frampt diz que o dever do escolhido é
+        suceder Gwyn e manter a chama acesa para que o mundo não se acabe em
+        trevas. Essa parece ser a ideia correta. Na verdade, quem não explora o
+        jogo de um jeito bem específico talvez nunca encontre algo que conteste
+        essa ideia. Mas as serpentes são mestras da manipulação. Porém, há outra
+        serpente chamada Darkstalker Kaathe, nas profundezas do abismo das
+        trevas que apenas Artorias, o lendário guerreiro, conseguiu andar.
+        Quando o escolhido chega lá, é surpreendido com a verdadeira versão dos
+        fatos, até então totalmente desconhecida: "Devo revelar a verdade, sem
+        remorso. Após o advento do fogo, os senhores antigos encontraram as três
+        almas. Mas seu progenitor encontrou uma quarta alma, única. A Dark Soul.
+        Seu ancestral tomou a alma para si e esperou o fogo se apagar. E logo as
+        chamas se apagaram, e apenas a escuridão sobrou. E assim teve início a
+        era dos homens, a Era da Escuridão. Porém Gwyn temia o escuro. Abraçando
+        sua Era do Fogo, e por ter medo dos humanos e do Senhor das Trevas que
+        um dia nasceria entre eles, Gwyn resistiu ao curso da natureza. Ao se
+        sacrificar para manter a chama viva, e comandando seus filhos para
+        guiarem os humanos, Gwyn apagou o seu passado para prevenir o seu
+        nascimento, o nascimento do Senhor das Trevas. Eu sou uma serpente
+        primordial. Eu quero reparar os erros do passado e encontrar nosso
+        verdadeiro Senhor. Mas a outra serpente, Frampt, perdeu seu juízo e se
+        aliou a Gwyn. Guerreiro Undead, estamos em uma encruzilhada. Apenas eu
+        sei a verdade sobre o seu destino. Você precisa destruir o decadente
+        Gwyn, que mantém o fogo e resiste à natureza, e tornar-se o quarto
+        Senhor, para que possa enfim trazer a Era da Escuridão", revela Kaathe.
+        E assim o escolhido fica sabendo de sua importância, e que o futuro está
+        em suas mãos. Há duas saídas: a primeira é seguir o desejo dos
+        seguidores de Gwyn e reacender a chama. Mas isso não seria um simples
+        remendo temporário? Nem mesmo o sacrifício de Gwyn manteve a chama acesa
+        por muito tempo. No fim, o escolhido só iria continuar o fogo por mais
+        um tempo, à espera de que outra pessoa o substituísse. Por outro lado,
+        derrotar Gwyn e deixar a chama morrer é mesmo a solução correta? As
+        serpentes são seres manipuladores, então por que Kaathe seria diferente
+        de Frampt? Tudo o que envolve um excesso de trevas não parece acabar
+        bem, e quem sabe o que acontece quando a escuridão se espalha demais? A
+        história do reino de Oolacile mostra que a escuridão pode muito bem
+        corromper os seres do mundo. O escolhido precisa tomar essa decisão,
+        pois não há mais volta. Ele vai morrer e voltar quantas vezes for
+        necessário até cumprir o seu destino. Entre manipulações de todos os
+        lados e inimigos perigosos, não há a opção de um final feliz. Pois em
+        Lordran, tudo acaba em tragédia.
+      </div>
+    </div>
   </body>
 </html>

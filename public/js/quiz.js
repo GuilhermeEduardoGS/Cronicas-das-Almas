@@ -1,30 +1,48 @@
 const listaDeQuestoes = [
 
     {
-        pergunta: "Qual mês tem 30 dias?",
-        alternativaA: "Janeiro",
-        alternativaB: "Dezembro",
-        alternativaC: "Junho",
-        alternativaD: "Agosto",
+        pergunta: "Quem comandava o mundo antes da Primeira Chama?",
+        alternativaA: "O Gwyn",
+        alternativaB: "Os Gigantes",
+        alternativaC: "Os Dragões",
+        alternativaD: "O Pigmeu Furtivo",
         alternativaCorreta: "alternativaC"
     },
 
     {
-        pergunta: "Quantas horas tem em um dia?",
-        alternativaA: "30 horas",
-        alternativaB: "38 horas",
-        alternativaC: "48 horas",
-        alternativaD: "24 horas",
+        pergunta: "Quem tentou recriar a primeira chama?",
+        alternativaA: "Gwyn",
+        alternativaB: "Seath",
+        alternativaC: "Pigmeu Furtivo",
+        alternativaD: "Izalith",
         alternativaCorreta: "alternativaD"
     },
 
     {
-        pergunta: "Qual destes números é ímpar?",
-        alternativaA: "Dez",
-        alternativaB: "Doze",
-        alternativaC: "Oito",
-        alternativaD: "Onze",
-        alternativaCorreta: "alternativaD"
+        pergunta: "Quem se sacrificou para não deixar a Primeira Chama se apagar?",
+        alternativaA: "Gwyn",
+        alternativaB: "Seath",
+        alternativaC: "Pigmeu Furtivo",
+        alternativaD: "Izalith",
+        alternativaCorreta: "alternativaA"
+    },
+
+    {
+        pergunta: "Quem é um traidor?",
+        alternativaA: "Gwyn",
+        alternativaB: "Seath",
+        alternativaC: "Pigmeu Furtivo",
+        alternativaD: "Izalith",
+        alternativaCorreta: "alternativaB"
+    },
+    
+    {
+        pergunta: "Quem fugiu com a Dark Soul?",
+        alternativaA: "Gwyn",
+        alternativaB: "Seath",
+        alternativaC: "Pigmeu Furtivo",
+        alternativaD: "Izalith",
+        alternativaCorreta: "alternativaC"
     }
 
 ]

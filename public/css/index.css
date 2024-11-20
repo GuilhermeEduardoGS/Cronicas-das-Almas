@@ -20,8 +20,11 @@
 
 .main_home{
     background-image: url(../assets/firelink_home.jpeg);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;       
+    background-attachment: fixed;
+    position: absolute;
 }
 
 /* Index - Containers */
@@ -143,4 +146,12 @@ body .containers .containerHistorias .tituloHistorias{
     .log_to_cad:hover {
         color: orange;
         transition: all 0.4s;
+      }
+
+      .DS_full{
+        margin-top: 500px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-size: 25px;
       }
