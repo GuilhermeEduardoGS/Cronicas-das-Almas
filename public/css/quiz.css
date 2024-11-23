@@ -1,76 +1,193 @@
-:root {
-    --primary-brand-color: #ED145B;
-    --secondary-brand-color: #0762C8;
-    --success: #198754;
-    --success-dark: #095c36;
-    --success-light: #9dd3ba;
-    --warning: #ffc107;
-    --warning-dark: #705400;
-    --warning-light: #fdebb3;
-    --danger: #dc3545;
-    --danger-dark: #990c19;
-    --danger-light: #f0c1c6;
-    --new-gray: #CCCCCC;
-    --new-black: #212427;
-    --new-white: #E8E8E8;
+@font-face {
+    font-family: 'optimus regular';
+    src: url('fonts/optimusprinceps-webfont.woff2') format('woff2'),
+         url('fonts/optimusprinceps-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'optimus bold';
+    src: url('fonts/optimusprincepssemibold-webfont.woff2') format('woff2'),
+         url('fonts/optimusprincepssemibold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    color: var(--new-black);
-    background-color: var(--new-white);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-button {
-    font-family: monospace;
-    font-weight: bold;
-}
-
-.flex-colunar {
-    display: flex;
-    flex-direction: column;
-}
-
-.width-fit-content {
-    width: fit-content;
-}
-
-.border-primary {
-    border: 3px solid var(--primary-brand-color);
-}
-
-.border-secondary {
-    border: 3px solid var(--secondary-brand-color);
-}
-
-.padding-8 {
-    padding: 8px;
-}
-
-.text-bold {
-    font-weight: bold;
-}
-
-.text-success-with-bg {
-    color: var(--success-dark);
-    background-color: var(--success-light);
-}
-
-.text-warning-with-bg {
-    color: var(--warning-dark);
-    background-color: var(--warning-light);
-}
-
-.text-danger-with-bg {
-    color: var(--danger-dark);
-    background-color: var(--danger-light);
-}
-
-.text-new-gray {
-    color: var(--new-gray);
-}
-
-.pontuacaoEJogo{
+    font-family: 'optimus regular', Arial, sans-serif;
+    background-image: url(../assets/quiz.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.box_all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+}
+
+.box_jogo {
+    background-color: rgba(33, 33, 31, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.box_pontos {
+    background-color: rgba(33, 33, 31, 0.8);
+    padding: 15px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto_pontos{
+    color: white;
+}
+
+.score-info {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+.score-text {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+}
+
+.box_questao {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.texto_questao {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.alternativas {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+}
+
+.selects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.selects .option {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    width: 80%;
+    justify-content: center;
+}
+
+.selects .option input {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.option-label {
+    font-size: 16px;
+    color: white;
+    display: block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(206, 210, 209, 0.7);
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option-label:hover {
+    background-color: #d9d9d9;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-button,
+.botao_iniciar,
+.retry-button {
+    font-family: 'optimus regular';
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.submit-button, .botao_iniciar {
+    background-color: black;
+    opacity: 80%;
+}
+
+.retry-button {
+    background-color: #f44336;
+}
+
+.submit-button:hover,
+.retry-button:hover {
+    opacity: 100%;
+    transition: all 0.4s ease;
+}
+
+.submit-button:disabled,
+.retry-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }

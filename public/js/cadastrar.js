@@ -179,6 +179,7 @@ function cadastrar() {
 
 
     if(!validoUsuario || !validoEmail || !validoSenha || !validoConfEmail || !validoConfSenha){
+    alert("Preencha todos os campos corretamente!")
         return false
     }
 
