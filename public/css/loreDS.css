@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'optimus regular';
+    src: url('fonts/optimusprinceps-webfont.woff2') format('woff2'),
+        url('fonts/optimusprinceps-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'optimus bold';
+    src: url('fonts/optimusprincepssemibold-webfont.woff2') format('woff2'),
+        url('fonts/optimusprincepssemibold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.main_loreDS{
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.titulo{
+    font-family: 'optimus bold';
+    color: gold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.texto{
+    color: white;
+    font-family: 'optimus regular';
+    text-align: center;
+    /* border: 1px solid red; */
+    margin-bottom: 30px;
+    margin-right: 100px;
+    margin-left: 100px;
+    
+}
+
+
+.texto_voltar{
+    text-decoration: none;
+}
+
+.botao:hover{
+    color: gold;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.botao{
+    display: flex;
+    justify-self: center;
+    font-family: 'optimus regular';
+    color: white;
+    background-color: grey;
+    border-radius: 2px;
+    height: 30px;
+    width: auto;
+    font-size: 20px;
+    align-items: center;
+}

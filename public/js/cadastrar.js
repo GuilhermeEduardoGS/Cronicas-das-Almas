@@ -1,7 +1,7 @@
-var valido = true;
 function valUser (){
     var nome = ipt_nome.value.trim();
     var mensagem = "";
+    var valido = true;
 
     if(nome == ""){
         mensagem += `O campo Username não pode ser vazio.`
@@ -21,6 +21,7 @@ function valEmail (){
     var arroba = email.includes("@");
     var ponto = email.includes(".");
     var mensagem = "";
+    var valido = true;
 
     if(email == ""){
         mensagem += `O campo Email não pode ser vazio.<br>`
@@ -56,6 +57,7 @@ function valConfEmail(){
     var email = ipt_email.value;
     var confemail = ipt_confemail.value.trim();
     var mensagem = ""
+    var valido = true;
 
     if(confemail == ""){
         mensagem += `O campo Confirmar Email não pode ser vazio.`
@@ -86,6 +88,7 @@ function valSenha (){
     var minus = /[a-z]/.test(senha);
     var maius = /[A-Z]/.test(senha);
     var mensagem = "";
+    var valido = true;
     
     if(senha == ""){
         mensagem += `A senha não pode ser vazia.<br>`
@@ -144,6 +147,7 @@ function valConfSenha (){
     var senha = ipt_senha.value
     var confsenha = ipt_confsenha.value.trim()      
     var mensagem = "";
+var valido = true;
 
     if(confsenha == ""){
         mensagem += `O campo Confirmar Senha não pode ser vazio.<br>`
@@ -188,7 +192,8 @@ function cadastrar() {
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nome,
         emailServer: email,
-        senhaServer: senha
+        senhaServer: senha,
+        idUsuarioServer: sessionStorage.idUsuario
       }),
     })
       .then(function (resposta) {
@@ -202,8 +207,65 @@ function cadastrar() {
 
         } 
       })
-    return false;
-  
+
+      fetch("/usuarios/acharUsuario", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: email
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+        if (resposta.ok) {
+            console.log(resposta);
+    
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+                // sessionStorage.EMAIL_USUARIO = json.email;
+            });
+    
+        } else {
+    
+            console.log("Houve um erro ao tentar realizar o login!");
+    
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+    
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    fetch("/usuarios/autoQuiz", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuarioServer: idUsuario
+        })
+    }).then(function (resposta) {
+        console.log("Resposta recebida: ", resposta);
+        if (resposta.ok) {
+            console.log("Resposta OK!");
+            resposta.text().then(texto => {
+                console.log("Resposta em texto: ", texto);
+            });
+        } else {
+            console.log("Erro ao realizar a requisição!");
+            resposta.text().then(texto => {
+                console.error("Detalhes do erro: ", texto);
+            });
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    
+
 }
 
 function login(){

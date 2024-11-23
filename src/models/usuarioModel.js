@@ -10,7 +10,7 @@ function autenticar(nome, senha) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-function cadastrar(nome, email, senha) {
+function cadastrar(nome, email, senha, idUsuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
@@ -22,7 +22,50 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function acharId(email) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            var idUser = `
+                SELECT idUsuario FROM usuario WHERE email = '${email}';
+            `;
+            console.log("Executando a instrução SQL para SELECT: \n" + idUser);
+
+            database.executar(idUser)
+                .then(selectResult => {
+                    if (selectResult && selectResult.length > 0) {
+                        console.log("Usuário encontrado: ", selectResult[0]);
+                        resolve(selectResult[0]);
+                    } else {
+                        console.log(`Nenhum usuário encontrado com o email: ${email}`);
+                        resolve(null);
+                    }
+                })
+                .catch(err => {
+                    console.log("Erro ao realizar o SELECT:", err.message);
+                    reject(err);
+                });
+        }, 1000);
+    });
+}
+
+function autoQuiz(idUsuario) {
+    console.log("Função autoQuiz chamada para o usuário:", idUsuario);
+    var autoQuiz = `
+        INSERT INTO quiz (fkUsuario, rCertas, rErradas) values (${idUsuario}, 0, 0);
+    `;
+    console.log("Executando a instrução SQL para inserir no quiz: \n" + autoQuiz);
+    return database.executar(autoQuiz)
+        .catch((err) => {
+            console.log("Erro ao executar o autoQuiz:", err);
+        });
+}
+
+
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    autoQuiz,
+    acharId
 };

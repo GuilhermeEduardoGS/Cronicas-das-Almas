@@ -8,3 +8,10 @@ email varchar(100),
 senha varchar(25)
 );
 
+create table quiz(
+    idQuiz int primary key auto_increment,
+    fkUsuario int,
+    constraint fkUsuarioQuiz foreign key (fkUsuario) references usuario(idUsuario),
+    rCertas int,
+    rErradas int
+);
