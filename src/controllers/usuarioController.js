@@ -61,7 +61,7 @@ function cadastrar(req, res) {
         usuarioModel.cadastrar(nome, email, senha, idUsuario)
             .then(
                 function (resultado) {
-                    res.json(resultado);
+                    res.status(200).json(resultado);
                     console.log(resultado)
 
                 }
@@ -108,16 +108,19 @@ function acharUsuario(req, res){
 }
 
 function autoQuiz(req, res) {
+    console.log("Função autoQuiz no controller foi chamada!");
     var idUsuario = req.body.idUsuarioServer;
 
     usuarioModel.autoQuiz(idUsuario)
         .then(result => {
+            console.log("Quiz criado com sucesso:", result);
             res.status(201).json({
                 message: "Quiz criado com sucesso",
                 quizId: result.insertId
             });
         })
         .catch(err => {
+            console.log("Erro ao criar o quiz:", err);
             res.status(500).json({
                 message: "Erro ao criar o quiz",
                 error: err.message || "Erro desconhecido"

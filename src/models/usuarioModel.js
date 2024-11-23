@@ -10,7 +10,7 @@ function autenticar(nome, senha) {
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
-function cadastrar(nome, email, senha, idUsuario) {
+function cadastrar(nome, email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
     
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
@@ -49,18 +49,14 @@ function acharId(email) {
 }
 
 function autoQuiz(idUsuario) {
-    console.log("Função autoQuiz chamada para o usuário:", idUsuario);
+    console.log("Função autoQuiz chamada para o idUsuario:", idUsuario); 
     var autoQuiz = `
         INSERT INTO quiz (fkUsuario, rCertas, rErradas) values (${idUsuario}, 0, 0);
     `;
     console.log("Executando a instrução SQL para inserir no quiz: \n" + autoQuiz);
+
     return database.executar(autoQuiz)
-        .catch((err) => {
-            console.log("Erro ao executar o autoQuiz:", err);
-        });
 }
-
-
 
 
 module.exports = {

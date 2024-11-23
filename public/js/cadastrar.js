@@ -200,11 +200,14 @@ function cadastrar() {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-
-          setTimeout(() => {
-            window.location = "./login.html";
-          }, "1000");
-
+            resposta.json()
+            .then((dados) => {
+                console.log("cadastro do quiz:", dados)
+                cadastrarQuiz(dados.insertId)
+            })
+.catch(erro => {
+    console.log(erro)
+})
         } 
       })
 
@@ -228,7 +231,8 @@ function cadastrar() {
             });
     
         } else {
-    
+           
+
             console.log("Houve um erro ao tentar realizar o login!");
     
             resposta.text().then(texto => {
@@ -240,20 +244,29 @@ function cadastrar() {
         console.log(erro);
     })
 
+    
+
+}
+
+function cadastrarQuiz(id_usuario){
     fetch("/usuarios/autoQuiz", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            idUsuarioServer: idUsuario
+            idUsuarioServer: id_usuario
         })
     }).then(function (resposta) {
         console.log("Resposta recebida: ", resposta);
         if (resposta.ok) {
             console.log("Resposta OK!");
-            resposta.text().then(texto => {
-                console.log("Resposta em texto: ", texto);
+            resposta.json().then(json => {
+                console.log("Resposta em JSON: ", json);
+                console.log("ID do quiz criado:", json.quizId); 
+                // setTimeout(() => {
+                    window.location.href = "./login.html";
+                //   }, "1000");
             });
         } else {
             console.log("Erro ao realizar a requisição!");
@@ -263,10 +276,11 @@ function cadastrar() {
         }
     }).catch(function (erro) {
         console.log(erro);
-    })
+    });
     
-
+    
 }
+
 
 function login(){
     var nome = ipt_nome.value;
@@ -294,9 +308,8 @@ function login(){
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.idUsuario;
-                setTimeout (() => {
+
                     window.location.href = "./index.html";
-                }, 1000)
             });
         } else {
             alert("Houve um erro ao tentar realizar o login!")
