@@ -147,7 +147,7 @@ function valConfSenha (){
     var senha = ipt_senha.value
     var confsenha = ipt_confsenha.value.trim()      
     var mensagem = "";
-var valido = true;
+    var valido = true;
 
     if(confsenha == ""){
         mensagem += `O campo Confirmar Senha não pode ser vazio.<br>`
@@ -157,7 +157,7 @@ var valido = true;
         ipt_confsenha.style.borderColor = "green"
     }
 
-    if(senha != confsenha){
+    if(senha !== confsenha){
         mensagem += `As senhas devem ser iguais.<br>`
         ipt_confsenha.style.borderColor = "red"
         valido = false
@@ -171,15 +171,23 @@ var valido = true;
 }
 
 function cadastrar() {
-    // aguardar();
+    var validoUsuario = valUser()
+    var validoEmail = valEmail()
+    var validoSenha = valSenha()
+    var validoConfEmail = valConfEmail()
+    var validoConfSenha = valConfSenha()
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+
+    if(!validoUsuario || !validoEmail || !validoSenha || !validoConfEmail || !validoConfSenha){
+        return false
+    }
+
     var nome = ipt_nome.value;
     var email = ipt_email.value;
     var senha = ipt_senha.value;
-    var confEmail = ipt_confemail.value;
-    var confSenha = ipt_confsenha.value;
+    var confemail = ipt_confemail.value;
+    var confsenha = ipt_confsenha.value;
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
