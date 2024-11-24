@@ -151,10 +151,28 @@ function attQuiz(req, res) {
 
 }
 
+function dadosQuiz(req, res){
+    console.log('Dados para a dash')
+    usuarioModel.dadosQuiz()
+    .then(
+        function (resultado){
+            res.json(resultado)
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar dados: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     acharUsuario,
     autoQuiz,
-    attQuiz
+    attQuiz,
+    dadosQuiz
 }

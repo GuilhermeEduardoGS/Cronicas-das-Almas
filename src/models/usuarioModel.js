@@ -1,26 +1,28 @@
 var database = require("../database/config")
 
+// Login
+
 function autenticar(nome, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", nome, senha)
     var instrucaoSql = `
-        SELECT idUsuario, nome, email FROM usuario WHERE nome = '${nome}' AND senha = '${senha}';
+        SELECT idUsuario, nome, email FROM usuario WHERE nome = '${nome}' AND senha = MD5('${senha}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
-// Coloque os mesmos parâmetros aqui. Vá para a var instrucaoSql
+// Cadastro
 function cadastrar(nome, email, senha, classe) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha, classe);
     
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
     var instrucaoSql = `
-        INSERT INTO usuario (nome, email, senha, classe) VALUES ('${nome}', '${email}', '${senha}', '${classe}');
+        INSERT INTO usuario (nome, email, senha, classe) VALUES ('${nome}', '${email}', MD5('${senha}'), '${classe}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+// Achar ID
 
 function acharId(email) {
     return new Promise((resolve, reject) => {
@@ -48,6 +50,8 @@ function acharId(email) {
     });
 }
 
+// Insert automatico no quiz ao fazer login
+
 function autoQuiz(idUsuario) {
     console.log("Função autoQuiz chamada para o idUsuario:", idUsuario); 
     var autoQuiz = `
@@ -58,17 +62,14 @@ function autoQuiz(idUsuario) {
     return database.executar(autoQuiz)
 }
 
+// Atualizar placar das respostas certas e erradas do usuario no quiz
+
 function attQuiz(idUsuario, Correto){
     console.log("Atualziar Quiz")
     var attQuizCerta= `
-    UPDATE quiz 
-    SET rCertas = rCertas + 1 
-    WHERE fkUsuario = ${idUsuario};
+    UPDATE quiz SET rCertas = rCertas + 1 WHERE fkUsuario = ${idUsuario};
     `
-    var attQuizErrado= `
-    UPDATE quiz 
-    SET rErradas = rErradas + 1 
-    WHERE fkUsuario = ${idUsuario};
+    var attQuizErrado= `UPDATE quiz SET rErradas = rErradas + 1 WHERE fkUsuario = ${idUsuario};
     `
 
     if(Correto){
@@ -78,11 +79,32 @@ function attQuiz(idUsuario, Correto){
 
 }
 
+// Selects para a dashboard
+
+function dadosQuiz(){
+    console.log("Select dos dados")
+    
+    var classesDash=`
+    SELECT classe FROM usuario;
+    `
+    
+    var respCertasDash=`
+    SELECT TRUNCATE(AVG(rCertas) , 2) from quiz;
+    `
+    
+    var respErradasDasg=`
+    SELECT TRUNCATE(AVG(rErradas) , 2) from quiz;
+    `
+    
+    return database.executar(classesDash, respCertasDash, respErradasDasg);
+
+}
 
 module.exports = {
     autenticar,
     cadastrar,
     autoQuiz,
     acharId,
-    attQuiz
+    attQuiz,
+    dadosQuiz  
 };

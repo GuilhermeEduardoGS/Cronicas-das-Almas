@@ -156,3 +156,8 @@ body .containers .containerHistorias .tituloHistorias{
         transition: all 0.4s;
       }
 
+      .txtSobreMim{
+        display: flex;
+        margin: 30px;
+      }
+

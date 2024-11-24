@@ -98,8 +98,8 @@ function valSenha (){
         ipt_senha.style.borderColor = "green"
     }
 
-    if(tamanho < 8 || tamanho > 25){
-        mensagem += `A senha deve conter entre 8 a 25 caracteres.<br>`
+    if(tamanho < 8 ){
+        mensagem += `A senha deve conter no minímo 8 caracteres.<br>`
         ipt_senha.style.borderColor = "red"
         valido = false
     }else{

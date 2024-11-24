@@ -24,5 +24,9 @@ router.put("/attQuiz", function (req, res) {
     usuarioController.attQuiz(req, res);
 });
 
+router.get("/dadosQuiz", function (req, res) {
+    usuarioController.dadosQuiz(req, res);
+});
+
 
 module.exports = router;

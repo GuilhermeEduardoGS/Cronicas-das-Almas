@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: 'optimus regular', Arial, sans-serif;
+    font-family: 'optimus regular';
     background-image: url(../assets/quiz.jpg);
     background-size: cover;
     background-repeat: no-repeat;
