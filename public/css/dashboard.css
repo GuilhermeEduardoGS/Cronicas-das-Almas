@@ -1,0 +1,45 @@
+.main_dashboard{
+    background-image: url(../assets/dash3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.myChart {
+    display: flex;
+    justify-self: center;
+    margin-top: 100px;
+    height: 500px;
+    width: 60%;
+    color: white;
+}
+
+.myChart canvas {
+    height: 100% !important;
+    width: 100% !important;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.kpis{
+    display: flex;
+    justify-self: center;
+    flex-direction: row;
+    width: 1000px;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 50px;
+    font-size: 30px;
+}  
+
+.Certo, .Errado {
+    display: flex;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 350px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}

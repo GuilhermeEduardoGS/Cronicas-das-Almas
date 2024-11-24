@@ -68,14 +68,14 @@ body .containers .containerHistorias{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: auto;
+    height: 250px;
     width: 550px;
     font-family: 'optimus regular';
     font-size: large;
     color: white;
     text-align: center;
     border: 2px solid rgba(176, 175, 150, 0.2);
-    background-color: rgba(33, 33, 31, 0.7);
+    background-color: rgba(33, 33, 31, 0.6);
 }
 
 /* Index - Título "Sobre Mim" */
@@ -116,10 +116,24 @@ body .containers .containerHistorias .tituloHistorias{
      body .header .botoes {
         display: flex;
         margin-right: 50px;
-        /* border: 1px solid red;   */
         align-self: center;
         gap: 30px;
     }   
+
+    .bAcessarLogin, .bAcessarPerfil, .bSair, .bQuiz{
+        height: 30px;
+        width: 70px;
+        border: 2px solid rgba(176, 175, 150, 0.2);
+        background-color: rgba(33, 33, 31, 0.556);
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }   
+
+    .bAcessarLogin:hover, .bAcessarPerfil:hover, .bSair:hover, .bQuiz:hover{
+        color: gold;
+    }
 
     .naotemcadastro{
         display: flex;
@@ -147,12 +161,13 @@ body .containers .containerHistorias .tituloHistorias{
       }
 
       .texto {
-        color: gold;
+        color: white;
+        font-size: 25px;
         text-decoration: none;
       }
       
       .texto:hover {
-        color: orange;
+        color: gold;
         transition: all 0.4s;
       }
 
