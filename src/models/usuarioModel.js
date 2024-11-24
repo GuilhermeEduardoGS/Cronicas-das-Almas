@@ -58,10 +58,31 @@ function autoQuiz(idUsuario) {
     return database.executar(autoQuiz)
 }
 
+function attQuiz(idUsuario, Correto){
+    console.log("Atualziar Quiz")
+    var attQuizCerta= `
+    UPDATE quiz 
+    SET rCertas = rCertas + 1 
+    WHERE fkUsuario = ${idUsuario};
+    `
+    var attQuizErrado= `
+    UPDATE quiz 
+    SET rErradas = rErradas + 1 
+    WHERE fkUsuario = ${idUsuario};
+    `
+
+    if(Correto){
+        return database.executar(attQuizCerta)
+    }
+    return database.executar(attQuizErrado)
+
+}
+
 
 module.exports = {
     autenticar,
     cadastrar,
     autoQuiz,
-    acharId
+    acharId,
+    attQuiz
 };

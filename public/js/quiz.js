@@ -45,6 +45,7 @@ const listaDeQuestoes = [
     }
 ];
 
+let correta = false;
 let numeroDaQuestaoAtual = 0;
 let pontuacaoFinal = 0;
 let tentativaIncorreta = 0;
@@ -101,7 +102,9 @@ function submeter() {
         btnSubmeter.disabled = true;
         habilitarAlternativas(false); 
 
-        checarResposta(); 
+        checarResposta();
+        attQuiz();
+        correta = false;
     }
 }
 
@@ -133,6 +136,7 @@ function checarResposta() {
             document.getElementById(alternativaCorreta).classList.add("text-success-with-bg");
             pontuacaoFinal++;
             certas++;
+            correta = true;
             document.getElementById("spanCertas").innerHTML = certas;
         } else if (option.checked && option.value !== respostaQuestaoAtual) {
             const wrongLabelId = option.labels[0].id;
@@ -222,4 +226,29 @@ function tentarNovamente() {
     document.getElementById('spanPontuacaoFinal').innerHTML = "0";
 
     iniciarQuiz();
+}
+
+function attQuiz() {
+    var guardarId = sessionStorage.ID_USUARIO
+    fetch('/usuarios/attQuiz', {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            guardarServer: guardarId, 
+            CorretoServer: correta
+        })
+    }).then(function (resposta) {
+
+        if (resposta.ok) {
+            console.log("Update Feito!")
+        } else if (resposta.status == 404) {
+            window.alert("Deu 404!");
+        } else {
+            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
 }

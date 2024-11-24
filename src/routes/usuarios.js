@@ -20,4 +20,9 @@ router.post("/autoQuiz", function (req, res) {
     usuarioController.autoQuiz(req, res);
 })
 
+router.put("/attQuiz", function (req, res) {
+    usuarioController.attQuiz(req, res);
+});
+
+
 module.exports = router;

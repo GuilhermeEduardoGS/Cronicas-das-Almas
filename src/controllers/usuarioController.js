@@ -128,9 +128,30 @@ function autoQuiz(req, res) {
         });
 }
 
+function attQuiz(req, res) {
+    var guardarID = req.body.guardarServer;
+    var correto = req.body.CorretoServer;
+    console.log(guardarID)
+    usuarioModel.attQuiz(guardarID, correto)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     acharUsuario,
-    autoQuiz
+    autoQuiz,
+    attQuiz
 }
