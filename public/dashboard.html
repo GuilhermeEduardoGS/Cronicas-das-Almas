@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard</title>
 </head>
-<body onload="dadosQuiz()">
+<body onload="dadosQuiz(), dadosRCertaQuiz(), dadosRErradaQuiz()">
     
+    <div><canvas id="myChart"></canvas></div>
+
     <div id="dadosDash"></div>
+    <div id="dadosCertaDash"></div>
+    <div id="dadosErradaDash"></div>
+
 </body>
 </html>
 <script>
@@ -20,6 +26,10 @@
                 }
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for(i = 0; i < resposta.length; i++){
+                        var respostaAtual = resposta[i]
+                        dadosDash.innerHTML += `${respostaAtual.classe} - ${respostaAtual.Escolhas}<br>`
+                    }
                 });
             } else {
                 throw ('Houve um erro na API!');
@@ -29,4 +39,75 @@
         });
 
     }
+
+    function dadosRCertaQuiz(){
+
+
+        fetch("/usuarios/dadosRCertaQuiz").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for(i = 0; i < resposta.length; i++){
+                        var respostaAtual = resposta[i]
+                        dadosCertaDash.innerHTML += `${respostaAtual.mediaCertas}`
+                    }
+                    
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta)
+        });
+    }
+
+    function dadosRErradaQuiz(){
+        fetch("/usuarios/dadosRErradaQuiz").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for(i = 0; i < resposta.length; i++){
+                        var respostaAtual = resposta[i]
+                        dadosErradaDash.innerHTML += `${respostaAtual.mediaErradas}`
+                    }
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta)
+        });
+    }
+
+
+    // Chart.js
+
+
+    const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
 </script>

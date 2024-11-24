@@ -85,18 +85,31 @@ function dadosQuiz(){
     console.log("Select dos dados")
     
     var classesDash=`
-    SELECT classe FROM usuario;
+    SELECT COUNT(classe) as Escolhas, classe FROM usuario GROUP BY classe;
     `
     
+    return database.executar(classesDash);
+
+}
+
+function dadosRCertaQuiz(){
+    console.log("Select das resp certas")
+
     var respCertasDash=`
-    SELECT TRUNCATE(AVG(rCertas) , 2) from quiz;
+    SELECT TRUNCATE(AVG(rCertas) , 2) as mediaCertas from quiz;
     `
-    
-    var respErradasDasg=`
-    SELECT TRUNCATE(AVG(rErradas) , 2) from quiz;
+    return database.executar(respCertasDash);
+
+}
+
+
+function dadosRErradaQuiz(){
+    console.log("Select das resp errada")
+
+    var respErradasDash=`
+    SELECT TRUNCATE(AVG(rErradas) , 2) as mediaErradas from quiz;
     `
-    
-    return database.executar(classesDash, respCertasDash, respErradasDasg);
+    return database.executar(respErradasDash);
 
 }
 
@@ -106,5 +119,7 @@ module.exports = {
     autoQuiz,
     acharId,
     attQuiz,
-    dadosQuiz  
+    dadosQuiz,
+    dadosRErradaQuiz,
+    dadosRCertaQuiz
 };

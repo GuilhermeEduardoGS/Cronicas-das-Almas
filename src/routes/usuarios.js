@@ -28,5 +28,13 @@ router.get("/dadosQuiz", function (req, res) {
     usuarioController.dadosQuiz(req, res);
 });
 
+router.get("/dadosRCertaQuiz", function (req, res) {
+    usuarioController.dadosRCertaQuiz(req, res);
+});
+
+router.get("/dadosRErradaQuiz", function (req, res) {
+    usuarioController.dadosRErradaQuiz(req, res);
+});
+
 
 module.exports = router;

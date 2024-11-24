@@ -168,11 +168,48 @@ function dadosQuiz(req, res){
     );
 }
 
+function dadosRCertaQuiz(req, res){
+    console.log('Dados para a dash')
+    usuarioModel.dadosRCertaQuiz()
+    .then(
+        function (resultado){
+            res.json(resultado)
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar dados: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
+function dadosRErradaQuiz(req, res){
+    console.log('Dados para a dash')
+    usuarioModel.dadosRErradaQuiz()
+    .then(
+        function (resultado){
+            res.json(resultado)
+        }
+    )
+    .catch(
+        function (erro) {
+            console.log(erro);
+            console.log("Houve um erro ao buscar dados: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     acharUsuario,
     autoQuiz,
     attQuiz,
-    dadosQuiz
+    dadosQuiz,
+    dadosRCertaQuiz,
+    dadosRErradaQuiz
+
 }
