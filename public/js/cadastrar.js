@@ -170,6 +170,7 @@ function valConfSenha (){
     return valido
 }
 
+
 function cadastrar() {
     var validoUsuario = valUser()
     var validoEmail = valEmail()
@@ -186,10 +187,11 @@ function cadastrar() {
     var nome = ipt_nome.value;
     var email = ipt_email.value;
     var senha = ipt_senha.value;
+    var classe = slt_classe.value
     var confemail = ipt_confemail.value;
     var confsenha = ipt_confsenha.value;
 
-
+console.log(classe)
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
@@ -202,7 +204,8 @@ function cadastrar() {
         nomeServer: nome,
         emailServer: email,
         senhaServer: senha,
-        idUsuarioServer: sessionStorage.idUsuario
+        idUsuarioServer: sessionStorage.idUsuario,
+        classeServer: classe
       }),
     })
       .then(function (resposta) {
