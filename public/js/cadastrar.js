@@ -190,15 +190,12 @@ function cadastrar() {
     var classe = slt_classe.value;
 
 console.log(classe) 
-    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nome,
         emailServer: email,
         senhaServer: senha,
