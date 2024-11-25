@@ -30,7 +30,7 @@ const listaDeQuestoes = [
         pergunta: "Quem é um traidor?",
         alternativaA: "Gwyn",
         alternativaB: "Seath",
-        alternativaC: "Pigmeu Furtivo",
+        alternativaC: "Sif",
         alternativaD: "Izalith",
         alternativaCorreta: "alternativaB"
     },
