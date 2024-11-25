@@ -187,27 +187,24 @@ function cadastrar() {
     var nome = ipt_nome.value;
     var email = ipt_email.value;
     var senha = ipt_senha.value;
-    var classe = slt_classe.value
-    var confemail = ipt_confemail.value;
-    var confsenha = ipt_confsenha.value;
+    var classe = slt_classe.value;
 
-console.log(classe)
-    
+console.log(classe) 
+    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nome,
         emailServer: email,
         senhaServer: senha,
-        idUsuarioServer: sessionStorage.idUsuario,
         classeServer: classe
       }),
-    })
-      .then(function (resposta) {
+    }).then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
@@ -221,41 +218,6 @@ console.log(classe)
 })
         } 
       })
-
-      fetch("/usuarios/acharUsuario", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            emailServer: email
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
-        if (resposta.ok) {
-            console.log(resposta);
-    
-            resposta.json().then(json => {
-                console.log(json);
-                console.log(JSON.stringify(json));
-                // sessionStorage.EMAIL_USUARIO = json.email;
-            });
-    
-        } else {
-           
-
-            console.log("Houve um erro ao tentar realizar o login!");
-    
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-    
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-
-    
 
 }
 
